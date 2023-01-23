@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    <form method="POST">
+        <h3 align="center">Sign Up</h3>
+        <input type="email" placeholder="Enter email" name="email">
+        <input type="text" placeholder="Enter your name" name="name">
+        <input type="password" placeholder="Enter password" name="password1">
+        <input type="password" placeholder="Confirm password" name="password2"><br>
+        <button type="submit">Sign Up</button>
+    </form>
+{% endblock %}

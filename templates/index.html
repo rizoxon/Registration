@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Home {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <nav>
+        {% if user.is_authenticated %}
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+        {% else %}
+        <a href="/signUp">Sign Up</a>
+        <a href="/login">Login</a>
+        {% endif %}
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <p class="alert error"> {{ message }} </p>
+                {% else %}
+                    <p class="alert success"> {{ message }} </p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+</body>
+</html>

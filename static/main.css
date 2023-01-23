@@ -1,0 +1,112 @@
+/* ######################### Google fonts | Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+    --bg-color: #e1dad2;
+    --bg-color-2: #d8a28c;
+    --error-color: #4d1635;
+    --error-color-light: #4d163555;
+    --success-color: #194a50;
+    --success-color-light: #194a5055;
+    --text-color: rgba(0, 0, 0, 0.6);
+}
+
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+/* ################################# Navbar */
+nav{
+    background-color: var(--bg-color-2);
+    display: flex;
+    align-items: center;
+}
+nav a {
+    text-decoration: none;
+    color: var(--bg-color);
+    padding: 10px 15px;
+    transition: 0.2s;
+    font-weight: bold;
+}
+nav a:hover{
+    color: var(--error-color);
+}
+
+
+/* ################################  Alerts */
+.alert{
+    width: 100%;
+    padding: 1% 2%;
+    text-align: center;
+}
+.error{
+    color: var(--error-color);
+    background-color: var(--error-color-light);
+}
+.success{
+    color: var(--success-color);
+    background-color: var(--success-color-light);
+}
+
+/* ###################################  MAIN */
+body > main > form{
+    width: min(500px, 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2%;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+body > main > form > *{
+    width: 100%;
+    margin-bottom: 2%;
+}
+body > main > form > h3{
+    text-align: center;
+    font-size: min(3.5vw, 30px);
+    padding-bottom: 2%;
+}
+body > main > form > input, button{
+    background: none;
+    border: 1px solid #999;
+    font-size: min(3vw, 16px);
+    padding: 1%;
+    outline: none;
+}
+body > main > form > button{
+    background-color: var(--success-color-light);
+    color: var(--success-color);
+    font-size: min(3vw, 20px);
+}
+body > main > h2, h3{
+    text-align: center;
+    padding: 2%;
+}
+body > main > p{
+    padding: 1%;
+}
+body > main > table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: min(800px, 100%);
+    border-collapse: collapse;
+}
+body > main > table th, td{
+    padding: 1%;
+}
